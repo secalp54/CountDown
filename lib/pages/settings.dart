@@ -57,9 +57,9 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             ElevatedButton(
                 onPressed: () async {
-                 
-                  manager.writeDataString("setTime", _girilendeger);
-                 
+                  int saniye = int.parse(_girilendeger) * 60;
+                  manager.writeDataString("setTime", saniye.toString());
+                  Navigator.pop(context);
                 },
                 child: const Text("Kaydet")),
           ],
